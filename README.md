@@ -3,6 +3,23 @@
 This directory preserves the STM VL53L0X API tree and adds a portable MCU
 platform implementation for the I2C forwarding breakout firmware.
 
+## Breakout board
+
+The EZrange breakout is an I2C bridge for a VL53L0X sensor. Its PSoC presents
+a programmable I2C address to the host and forwards register writes and read
+requests to the sensor on a separate I2C bus. The default host address is
+`0x29`; address changes are stored in EEPROM and restored after reset. The
+sensor itself remains responsible for distance measurements.
+
+At startup, the red LED indicates the stored address by blinking. The firmware
+then enters low-power sleep between I2C transactions.
+
+| Front | Back |
+| --- | --- |
+| ![Front of the EZrange breakout board](pictures/front.jpg) | ![Back of the EZrange breakout board](pictures/back.jpg) |
+
+![EZrange VL53L0X breakout schematic](pictures/EZrange%20vl53l0x%20breakout%20schematics.png)
+
 ## Build selection
 
 Add the five `core/src/*.c` files and these two platform files to the MCU
