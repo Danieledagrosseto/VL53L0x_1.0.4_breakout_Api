@@ -1,4 +1,4 @@
-# VL53L0X EZrange breakout API for MCU ports
+# EZrange VL53L0X breakout API for MCU ports
 
 This directory preserves the STM VL53L0X API tree and adds a portable MCU
 platform implementation for the EZrange I2C forwarding breakout firmware.
